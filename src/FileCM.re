@@ -26,8 +26,8 @@ data:
     filecontentBlock(filecontent) ++
     metadata(name, ns);
 
-  let errMsg = (oname, ons, ofilename, ofilecontent) => {
-    let missingKey = switch (oname, ons, ofilename, ofilecontent) {
+  let errMsg = (name, ns, filename, filecontent) => {
+    let missingKey = switch (name, ns, filename, filecontent) {
     | (None, _, _, _) => "name"
     | (_, None, _, _) => "namespace"
     | (_, _, None, _) => "filename"
@@ -45,10 +45,10 @@ data:
     filecontent: option(string)
   };
 
-  let transform = ({name: oname, namespace: ons, filename: ofilename, filecontent: ofilecontent}) =>
-    switch (oname, ons, ofilename, ofilecontent) {
-    | (Some(name), Some(ns), Some(filename), Some(filecontent)) => _transform(name, ns, filename, filecontent)
-    | _ => errMsg(oname, ons, ofilename, ofilecontent)
+  let transform = ({name, namespace, filename, filecontent}) =>
+    switch (name, namespace, filename, filecontent) {
+    | (Some(n), Some(ns), Some(fn), Some(fc)) => _transform(n, ns, fn, fc)
+    | _ => errMsg(name, namespace, filename, filecontent)
     };
 
   let transformByObject = absCM =>
