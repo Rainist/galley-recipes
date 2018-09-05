@@ -1,0 +1,28 @@
+{
+  "name": "galley-recipes",
+  "version": "0.0.1",
+  "description": "recipes for Galley",
+  "main": "dist/main.js",
+  "source": "src/main.re",
+  "keywords": [
+    "Galley",
+    "ReasonML",
+    "BuckleScript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rainist/galley-recipes.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bs-platform": "^4.0.5",
+    "rollup": "^0.57.0",
+    "rollup-plugin-bucklescript": "^0.7.0"
+  },
+  "scripts": {
+    "build": "rollup -c -make-world",
+    "start": "rollup -c -w",
+    "clean": "bsb -clean-world"
+  }
+}
