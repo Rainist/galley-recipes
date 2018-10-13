@@ -15,10 +15,10 @@ data:
       |> String.concat("\n")
       |> (joined) => joined ++ "\n";
 
-  let metadata = (name, ns) =>
-    "metadata:\n" ++
-    "  name: " ++ name ++ "\n" ++
-    "  namespace: " ++ ns ++ "\n";
+  let metadata = (name, ns) => {j|metadata:
+  name: $(name)
+  namespace: $(ns)
+|j};
 
   let _transform = (name, ns, filename, filecontent) =>
     header ++
