@@ -16,7 +16,7 @@ data:
       |> (joined) => joined ++ "\n";
 
   let metadata = (name, ns) =>
-    "metadata: \n" ++
+    "metadata:\n" ++
     "  name: " ++ name ++ "\n" ++
     "  namespace: " ++ ns ++ "\n";
 
@@ -55,18 +55,6 @@ data:
     absCM->configMapFromJs->transform;
 };
 
-let initialModel = [%bs.obj {
-  placeholder: {
-    namespace: "my-namespace",
-    name: "new-cm",
-    file: {
-      name: "file.txt",
-      content: "write something here"
-    }
-  }
-}];
-
 let default = [%bs.obj {
-  generate: Transformer.transformByObject,
-  initialModel: initialModel
+  generate: Transformer.transformByObject
 }];

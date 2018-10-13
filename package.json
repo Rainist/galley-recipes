@@ -17,11 +17,13 @@
   "dependencies": {},
   "devDependencies": {
     "bs-platform": "^4.0.5",
+    "mocha": "^5.2.0",
     "rollup": "^0.57.0",
     "rollup-plugin-bucklescript": "^0.7.0"
   },
   "scripts": {
-    "build": "rollup -c -make-world",
+    "test": "rollup -c && mocha",
+    "build": "rollup -c",
     "start": "rollup -c -w",
     "clean": "bsb -clean-world"
   }
