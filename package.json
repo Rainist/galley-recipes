@@ -14,9 +14,12 @@
     "type": "git",
     "url": "https://github.com/rainist/galley-recipes.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "js-base64": "^2.4.9"
+  },
   "devDependencies": {
     "bs-platform": "^4.0.5",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "rollup": "^0.57.0",
     "rollup-plugin-bucklescript": "^0.7.0"
@@ -25,6 +28,7 @@
     "test": "rollup -c && mocha",
     "build": "rollup -c",
     "start": "rollup -c -w",
+    "dev": "bsb -make-world -w",
     "clean": "bsb -clean-world"
   }
 }

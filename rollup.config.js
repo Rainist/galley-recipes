@@ -7,4 +7,5 @@ export default {
     format: "cjs",
   },
   plugins: [bucklescript()],
+  external: [ 'js-base64' ]
 };

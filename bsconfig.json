@@ -2,7 +2,10 @@
 // BuckleScript comes with its own parser for bsconfig.json, which is normal JSON, with the extra support of comments and trailing commas.
 {
   "name": "galley-recipes",
-  "sources": ["src"],
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
   "package-specs": ["es6"],
   "suffix": ".js",
   "bs-dependencies": [],
