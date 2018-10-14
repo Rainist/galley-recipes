@@ -25,7 +25,7 @@
     "rollup-plugin-bucklescript": "^0.7.0"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run test",
     "test": "rollup -c && mocha",
     "build": "rollup -c",
     "start": "rollup -c -w",

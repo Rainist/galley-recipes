@@ -15,14 +15,25 @@
 import { envMapper } from 'galley-recipes'
 const { generate } = envMapper;
 
-const output = generate({ namespace, cmName, cmEnv, secretName, secretEnv });
+const output = generate({
+  namespace: "my-namespace",
+  cmName: "my-cm",
+  cmEnv: "a=b\nc=d",
+  secretName: "my-secret",
+  secretEnv: "what=secret\nshouldbe=hidden"
+});
 ```
 
 ```js
 import { fileCM } from 'galley-recipes'
 const { generate } = fileCM;
 
-const output = generate({ name, namespace, filename, filecontent });
+const output = generate({
+  name: 'my-file-cm',
+  namespace: 'my-namespace',
+  filename: 'code.js',
+  filecontent: 'console.log("Hellow, World!");',
+});
 ```
 
 ## Test
