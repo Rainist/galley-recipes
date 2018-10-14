@@ -1,6 +1,37 @@
 # galley-recipes
+> this package replace internal recipe codes in [galley](https://github.com/rainist/galley) to reduce the complexity
 
-## WIP
+## Install
 
-- this will replace internal recipe codes in [galley](https://github.com/rainist/galley) to reduce the complexity
-- this will be published as an npm module
+`$ yarn add galley-recipes # or npm install galley-recipes`
+
+## How to use
+
+> Try [galley](https://rainist.github.io/galley) first to see what this package is for
+
+### and put them in your code like below
+
+```js
+import { envMapper } from 'galley-recipes'
+const { generate } = envMapper;
+
+const output = generate({ namespace, cmName, cmEnv, secretName, secretEnv });
+```
+
+```js
+import { fileCM } from 'galley-recipes'
+const { generate } = fileCM;
+
+const output = generate({ name, namespace, filename, filecontent });
+```
+
+## Test
+
+`$ yarn test`
+
+## Contribution
+[any contributions are welcome.](https://github.com/rainist/galley-recipes/issues/new)
+
+## License
+
+galley-recipes is MIT licensed.
