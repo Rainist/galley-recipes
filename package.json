@@ -1,6 +1,6 @@
 {
   "name": "galley-recipes",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "recipes for Galley",
   "main": "dist/main.js",
   "source": "src/main.re",
