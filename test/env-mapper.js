@@ -10,11 +10,16 @@ describe('generate EnvMapper', () => {
     const input = {
       namespace: "my-namespace",
       cmName: "new-cm",
-      cmEnv: `key=value
-key2=value2`,
+      cmEnv: `
+      key=value
+
+      key2=value2
+      `,
       secretName: "new-secret",
-      secretEnv: `key=value
-key2=value2`
+      secretEnv: `
+      key=value
+      key2=value2
+      `
     };
 
     const output = {
@@ -58,16 +63,6 @@ metadata:
               name: new-secret`,
       errMsg: undefined
     };
-
-    function compareDetail(o, o2) {
-      const {cm, secret, envSnippet, errMsg} = o
-      const {cm: cm2, secret: s2, envSnippet: e2, errMsg: em2} = o2
-
-      return cm==cm2
-        && secret==s2
-        && envSnippet==e2
-        && errMsg==em2
-    }
 
     it('should be same with pregenerated output', () => {
       assert(_.isEqual(generate(input), output));

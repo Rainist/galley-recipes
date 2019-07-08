@@ -22,6 +22,8 @@ type base64; /* abstract type for a document object */
 
 let encode = str => encodeBase64(base64, str);
 
+let filterBlankStr = str => str->String.trim->String.length != 0;
+
 let indent = (text, indenter) =>
   text
     |> Js.String.split("\n")
@@ -47,6 +49,7 @@ let genCM: its = ({namespace, cm}) => {
     env
       |> Js.String.split("\n")
       |> Array.to_list
+      |> List.filter(filterBlankStr)
       |> List.map(line =>
         line
           ->StrUtils.keyValueOf
@@ -84,6 +87,7 @@ let genSecret: its = ({namespace, secret}) => {
     env
       |> Js.String.split("\n")
       |> Array.to_list
+      |> List.filter(filterBlankStr)
       |> List.map(line =>
         line
           ->StrUtils.keyValueOf
@@ -130,6 +134,7 @@ let genSnippet: its = ({cm, secret}) => {
     env
       |> Js.String.split("\n")
       |> Array.to_list
+      |> List.filter(filterBlankStr)
       |> List.map(line =>
         line
           ->StrUtils.keyValueOf
