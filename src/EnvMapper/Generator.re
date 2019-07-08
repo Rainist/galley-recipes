@@ -47,6 +47,11 @@ let genCM: its = ({namespace, cm}) => {
     env
       |> Js.String.split("\n")
       |> Array.to_list
+      |> List.filter(line =>
+        line
+          ->String.trim
+          ->String.length != 0
+        )
       |> List.map(line =>
         line
           ->StrUtils.keyValueOf
@@ -84,6 +89,11 @@ let genSecret: its = ({namespace, secret}) => {
     env
       |> Js.String.split("\n")
       |> Array.to_list
+      |> List.filter(line =>
+        line
+          ->String.trim
+          ->String.length != 0
+        )
       |> List.map(line =>
         line
           ->StrUtils.keyValueOf
@@ -130,6 +140,11 @@ let genSnippet: its = ({cm, secret}) => {
     env
       |> Js.String.split("\n")
       |> Array.to_list
+      |> List.filter(line =>
+        line
+          ->String.trim
+          ->String.length != 0
+        )
       |> List.map(line =>
         line
           ->StrUtils.keyValueOf
